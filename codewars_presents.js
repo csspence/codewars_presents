@@ -23,6 +23,14 @@ The friend 3 gave gift to the friend 4 (a[3] == 4) - this means that in the outp
 The friend 4 gave gift to the friend 1 (a[4] == 1) - this means that in the output array number 4 is at position 1 : [4, 1, 2, 3].
 */
 
-function presents(a){
-  
+const presents = (a) => {
+    const gifts = [];
+    for(let i = 0; i < a.length; i++) {
+       gifts.push(a[i]); 
+    }
+    for(let i = 0; i < a.length; i++) {
+       gifts[a[i]] = i + 1; 
+    }
+    gifts.shift();
+    return gifts;
 }
